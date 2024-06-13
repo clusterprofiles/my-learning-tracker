@@ -113,7 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initial load
         loadLogs();
     }
-
     // Random quote generation
     const quotes = [
     { "zh": "今天的努力就是为了铺设明天的成功之路。", "en": "Today's effort is to pave the way for tomorrow's success." },
