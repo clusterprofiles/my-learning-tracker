@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const logForm = document.getElementById('logForm');
     const logList = document.getElementById('logList');
     const dateInput = document.getElementById('date');
+    const timeInput = document.getElementById('time');
     const contentInput = document.getElementById('content');
     const editIndexInput = document.getElementById('editIndex');
 
@@ -57,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const userLogs = logs[loggedInUser] || [];
             userLogs.forEach((log, index) => {
                 const li = document.createElement('li');
-                li.innerHTML = `${log.date}: ${log.content} <button onclick="editLog(${index})">编辑</button>`;
+                li.innerHTML = `${log.date} ${log.time}: ${log.content} <button onclick="editLog(${index})">编辑</button>`;
                 logList.appendChild(li);
             });
         }
@@ -66,16 +67,17 @@ document.addEventListener('DOMContentLoaded', () => {
         logForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const date = dateInput.value;
+            const time = timeInput.value;
             const content = contentInput.value;
             const editIndex = editIndexInput.value;
 
-            if (date && content) {
+            if (date && time && content) {
                 const logs = JSON.parse(localStorage.getItem('logs')) || {};
                 const userLogs = logs[loggedInUser] || [];
                 if (editIndex === '') {
-                    userLogs.push({ date, content });
+                    userLogs.push({ date, time, content });
                 } else {
-                    userLogs[editIndex] = { date, content };
+                    userLogs[editIndex] = { date, time, content };
                     editIndexInput.value = '';
                 }
                 logs[loggedInUser] = userLogs;
@@ -91,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const userLogs = logs[loggedInUser] || [];
             const log = userLogs[index];
             dateInput.value = log.date;
+            timeInput.value = log.time;
             contentInput.value = log.content;
             editIndexInput.value = index;
         }
@@ -153,6 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { "zh": "只有不断努力，才能实现人生的价值。", "en": "Only through continuous effort can you realize the value of life." },
     { "zh": "勇敢追梦，无惧风雨。", "en": "Bravely chase dreams, unafraid of wind and rain." }
     ];
+
 
     function getRandomQuote() {
         const randomIndex = Math.floor(Math.random() * quotes.length);
