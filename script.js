@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeInput = document.getElementById('time');
     const contentInput = document.getElementById('content');
     const editIndexInput = document.getElementById('editIndex');
+    const rememberMeCheckbox = document.getElementById('rememberMe');
 
     // Register user
     if (registerForm) {
@@ -31,17 +32,28 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
+            const rememberMe = rememberMeCheckbox.checked;
 
             const users = JSON.parse(localStorage.getItem('users')) || [];
             const user = users.find(u => u.username === username && u.password === password);
 
             if (user) {
+                if (rememberMe) {
+                    localStorage.setItem('rememberedUser', JSON.stringify({ username, password }));
+                }
                 localStorage.setItem('loggedInUser', username);
                 window.location.href = 'log.html';
             } else {
                 alert('用户名或密码错误');
             }
         });
+
+        const rememberedUser = JSON.parse(localStorage.getItem('rememberedUser'));
+        if (rememberedUser) {
+            document.getElementById('username').value = rememberedUser.username;
+            document.getElementById('password').value = rememberedUser.password;
+            rememberMeCheckbox.checked = true;
+        }
     }
 
     // Load logs for logged in user
