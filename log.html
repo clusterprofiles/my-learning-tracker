@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习日志 - 我的个人网站</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">主页</a></li>
+                <li><a href="log.html">学习日志</a></li>
+                <li><a href="login.html">登录</a></li>
+                <li><a href="register.html">注册</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>学习日志</h1>
+            <form id="logForm">
+                <label for="date">日期:</label>
+                <input type="date" id="date" required>
+                <label for="content">学习内容:</label>
+                <textarea id="content" required></textarea>
+                <input type="hidden" id="editIndex">
+                <button type="submit">保存</button>
+            </form>
+            <h2>我的学习记录</h2>
+            <ul id="logList"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 我的名字</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

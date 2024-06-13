@@ -1,0 +1,128 @@
+body {
+    font-family: "Courier New", Courier, monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #0ABAB5; /* Tiffany Blue */
+    color: #FFFFFF; /* White color */
+    font-size: 24px; /* Font size 24px */
+    font-weight: bold; /* Bold font */
+}
+
+header {
+    background-color: #0A9A95; /* Slightly darker Tiffany Blue */
+    color: #FFFFFF;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 2rem;
+    text-align: center;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.encouragement {
+    text-align: center;
+    background-color: #009A95;
+    padding: 1rem;
+    border: 1px solid #FFFFFF;
+    border-radius: 4px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.encouragement p {
+    font-family: 'ZCOOL QingKe HuangYou', 'Indie Flower', cursive;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    color: #FFFFFF;
+}
+
+footer {
+    background-color: #0A9A95;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 300px;
+    padding: 0.5rem;
+    border: 1px solid #FFFFFF;
+    border-radius: 4px;
+    background-color: #0ABAB5;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: #0A9A95;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0A8A85;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #009A95;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #FFFFFF;
+    border-radius: 4px;
+    text-align: left;
+}
